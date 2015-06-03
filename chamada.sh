@@ -23,6 +23,7 @@
 # A-FAZER: 
 #   * extrair ano, mês, dia do ambiente (amd=$(date +'%Y%m%d'))
 #   * deduzir hora e minuto de início da aula (md=$(date +'%H%M'))
+#   * tomar como base os horários https://github.com/jurandysoares/colario/blob/master/rascunho/tabela-horarios.csv
 
 quem_acessou=$(last -t 20150603163000 |  \
                awk '{print $1}' | \
