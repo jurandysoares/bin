@@ -25,10 +25,10 @@
 #   * deduzir hora e minuto de início da aula (md=$(date +'%H%M'))
 #   * tomar como base os horários https://github.com/jurandysoares/colario/blob/master/rascunho/tabela-horarios.csv
 
-quem_acessou=$(last -t 20150603163000 |  \
+quem_acessou=$(last -R -w -t 20150603163000 |  \
                awk '{print $1}' | \
                sort -u | \
-               egrep -v '^(jurandy|reboot|wtmp|^$)'
+               egrep -v "(${USER}|reboot|wtmp)"
                )
                
 for u in $quem_acessou; 
